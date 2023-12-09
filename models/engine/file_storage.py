@@ -1,33 +1,51 @@
 #!/usr/bin/python3
-"""Module for CustomFileStorage class."""
+"""
+Module for FileStorage class.
+"""
+
 import datetime
 import json
 import os
 
 
-class CustomFileStorage:
+class FileStorage:
 
-    """Class for managing storage and retrieval of data"""
-    __file_path = "custom_file.json"
+    """
+    Class for storing and retrieving data.
+    """
+
+    __file_path = "file.json"
     __objects = {}
 
-    def get_all(self):
-        """Returns the dictionary __objects"""
-        return CustomFileStorage.__objects
+    def all(self):
+        """Return the dictionary __objects."""
+        return FileStorage.__objects
 
-    def add_new(self, obj):
-        """Sets in __objects the obj with key <obj class name>.id"""
-        key = "{}.{}".format(type(obj)._name_, obj.id)
-        CustomFileStorage.__objects[key] = obj
+    def new(self, obj):
+        """
+        Set in __objects the obj with key <obj class name>.id.
 
-    def save_changes(self):
-        """Serializes __objects to the JSON file (path: __file_path)"""
-        with open(CustomFileStorage.__file_path, "w", encoding="utf-8") as f:
-            serialized_objects = {k: v.to_dict() for k, v in CustomFileStorage.__objects.items()}
-            json.dump(serialized_objects, f)
+        Args:
+        - obj: The object to be stored.
+        """
+        key = "{}.{}".format(type(obj).__name__, obj.id)
+        FileStorage.__objects[key] = obj
 
-    def get_classes(self):
-        """Returns a dictionary of valid classes and their references"""
+    def save(self):
+        """
+        Serialize __objects to the JSON file (path: __file_path).
+
+        This method writes the data stored in __objects to a JSON file.
+
+        Raises:
+        - IOError: If an error occurs while writing to the file.
+        """
+        with open(FileStorage.__file_path, "w", encoding="utf-8") as f:
+            d = {k: v.to_dict() for k, v in FileStorage.__objects.items()}
+            json.dump(d, f)
+
+    def classes(self):
+        """Return a dictionary of valid classes and their references."""
         from models.base_model import BaseModel
         from models.user import User
         from models.state import State
@@ -47,17 +65,20 @@ class CustomFileStorage:
         }
         return classes
 
-    def reload_data(self):
-        """Reloads the stored objects"""
-        if not os.path.isfile(CustomFileStorage.__file_path):
+    def reload(self):
+        """Reload the stored objects from the JSON file."""
+        if not os.path.isfile(FileStorage.__file_path):
             return
-        with open(CustomFileStorage.__file_path, "r", encoding="utf-8") as f:
-            obj_dict = json.load(f)
-            obj_dict = {k: self.get_classes()[v["_class_"]](**v) for k, v in obj_dict.items()}
-            CustomFileStorage.__objects = obj_dict
 
-    def get_attributes(self):
-        """Returns the valid attributes and their types for classname"""
+        with open(FileStorage.__file_path, "r", encoding="utf-8") as f:
+            obj_dict = json.load(f)
+            # Convert the dictionary to objects using class references
+            obj_dict = {k: self.classes()[v["__class__"]](**v)
+                        for k, v in obj_dict.items()}
+            FileStorage.__objects = obj_dict
+
+    def attributes(self):
+        """Return the valid attributes and their types for classname."""
         attributes = {
             "BaseModel": {
                 "id": str,

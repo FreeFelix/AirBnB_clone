@@ -1,10 +1,19 @@
 #!/usr/bin/python3
-"""Module defining a State class"""
+"""
+This module defines the State class,
+which manages state objects.
+"""
 
 from models.base_model import BaseModel
 
 
 class State(BaseModel):
-    """Manages state objects"""
+    """
+    Subclass of BaseModel for representing
+    and handling state information.
 
+    Attributes:
+        name (str): The name of the state.
+    """
     name = ""
+I

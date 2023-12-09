@@ -1,11 +1,15 @@
 #!/usr/bin/python3
-"""Module creating a City class"""
+"""This module defines the City class, which represents city objects."""
 
 from models.base_model import BaseModel
 
 
 class City(BaseModel):
-    """Manages city objects"""
+    """This class manages city objects.
 
+    Attributes:
+        state_id (str): The ID of the state to which the city belongs.
+        name (str): The name of the city.
+    """
     state_id = ""
     name = ""
