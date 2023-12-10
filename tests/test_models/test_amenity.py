@@ -15,14 +15,23 @@ from models.amenity import Amenity
 
 
 class TestAmenity_instantiation(unittest.TestCase):
-    """Unittests for testing instantiation of the Amenity class."""
+    """
+    Unittests for testing instantiation of
+    the Amenity class.
+    """
 
     def test_no_args_instantiates(self):
-        """Test that Amenity class can be instantiated with no arguments."""
+        """
+        Test that Amenity class can be instantiated
+        with no arguments.
+        """
         self.assertEqual(Amenity, type(Amenity()))
 
     def test_new_instance_stored_in_objects(self):
-        """Test that a new instance of Amenity is stored in the 'objects' attribute."""
+        """
+        Test that a new instance of Amenity is
+        stored in the 'objects' attribute.
+        """
         self.assertIn(Amenity(), models.storage.all().values())
 
     def test_id_is_public_str(self):
@@ -32,24 +41,33 @@ class TestAmenity_instantiation(unittest.TestCase):
     # ... (similar comments for other test methods)
 
     def test_instantiation_with_None_kwargs(self):
-        """Test that instantiation with None kwargs raises TypeError."""
+        """
+        Test that instantiation with None kwargs raises TypeError.
+        """
         with self.assertRaises(TypeError):
             Amenity(id=None, created_at=None, updated_at=None)
 
 
 class TestAmenity_save(unittest.TestCase):
-    """Unittests for testing save method of the Amenity class."""
+    """
+    Unittests for testing save method of the Amenity class.
+    """
 
     @classmethod
     def setUp(self):
-        """Set up test environment by renaming 'file.json' to 'tmp'."""
+        """
+        Set up test environment by renaming 'file.json' to 'tmp'.
+        """
         try:
             os.rename("file.json", "tmp")
         except IOError:
             pass
 
     def tearDown(self):
-        """Clean up test environment by removing 'file.json' and renaming 'tmp' back."""
+        """
+        Clean up test environment by removing 'file.json' and
+        renaming 'tmp' back.
+        """
         try:
             os.remove("file.json")
         except IOError:
@@ -60,7 +78,10 @@ class TestAmenity_save(unittest.TestCase):
             pass
 
     def test_one_save(self):
-        """Test that the save method updates the 'updated_at' attribute."""
+        """
+        Test that the save method updates the 'updated_at'
+        attribute
+        ."""
         am = Amenity()
         sleep(0.05)
         first_updated_at = am.updated_at
@@ -76,7 +97,10 @@ class TestAmenity_save(unittest.TestCase):
             am.save(None)
 
     def test_save_updates_file(self):
-        """Test that save method updates the 'file.json' with Amenity instance information."""
+        """
+        Test that save method updates the 'file.json' with
+        Amenity instance information.
+        """
         am = Amenity()
         am.save()
         amid = "Amenity." + am.id
