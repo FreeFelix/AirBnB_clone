@@ -1,0 +1,10 @@
+/* Header styling */
+header {
+    background-color: white; /* Background color of the header */
+    height: 70px; /* Height of the header */
+    width: 100%; /* Full width of the container */
+    border-bottom: 1px solid #CCCCCC; /* Bottom border with a light gray color */
+    background-image: url(../images/logo.png); /* Background image URL for the header */
+    background-repeat: no-repeat; /* Do not repeat the background image */
+    background-position: 20px 50%; /* Position of the background image (20px from the left, centered vertically) */
+}

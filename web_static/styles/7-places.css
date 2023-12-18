@@ -1,0 +1,27 @@
+/* Center-align text in elements with the class 'places' */
+.places {
+  text-align: center;
+}
+
+/* Style h1 elements within the 'places' class */
+.places h1 {
+  font-size: 30px;
+  text-align: left;
+}
+
+/* Style articles */
+article {
+  /* Set width, border, border radius, padding, margin, and display properties */
+  width: 390px;
+  border: 1px solid #FF5A5F;
+  border-radius: 4px;
+  padding: 20px;
+  margin: 20px;
+  display: inline-block;
+}
+
+/* Style h2 elements within articles */
+article h2 {
+  font-size: 30px;
+  text-align: center;
+}

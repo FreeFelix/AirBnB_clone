@@ -1,0 +1,15 @@
+/* Resetting default styles for the body element */
+body {
+    margin: 0;
+    padding: 0;
+    color: #484848;
+    font-size: 14px;
+    font-family: Circular, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Styling for a container div with a maximum width of 1000px, centered with margins */
+div.container {
+    max-width: 1000px;
+    margin: 30px auto; /* 30px top and bottom margins, auto left and right margins for centering */
+    /* text-align: center; */ /* Uncomment this line if you want to center text within the container */
+}

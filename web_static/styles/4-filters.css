@@ -1,0 +1,33 @@
+/* Styles for the container holding the content */
+div.container {
+    max-width: 1000px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+/* Styles for the filters section */
+section.filters {
+    background-color: white;
+    height: 70px;
+    width: 100%;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+}
+
+/* Styles for the buttons within the filters section */
+section.filters button {
+    background-color: #FF5A5F;
+    height: 48px;
+    width: 20%;
+    border: 0;
+    border-radius: 4px;
+    font-size: 18px;
+    color: #FFFFFF;
+    float: right;
+    margin: 11px 30px;
+}
+
+/* Styles for button hover effect */
+section.filters button:hover {
+    opacity: .9;
+}

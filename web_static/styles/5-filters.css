@@ -1,0 +1,72 @@
+/* search bar styling */
+
+/* Container styling */
+div.container {
+    max-width: 1000px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+/* Filters section styling */
+section.filters {
+    background-color: white;
+    height: 70px;
+    width: 100%;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+}
+
+/* Filter buttons styling */
+section.filters button {
+    background-color: #FF5A5F;
+    height: 48px;
+    width: 20%;
+    border: 0;
+    border-radius: 4px;
+    font-size: 18px;
+    color: #FFFFFF;
+    float: right;
+    margin: 11px 30px;
+}
+
+/* Hover effect on filter buttons */
+section.filters button:hover {
+    opacity: .9;
+}
+
+/* Location and Amenities part of search bar */
+
+/* Locations and Amenities container styling */
+.locations,
+.amenities {
+    height: 100%;
+    width: 25%;
+    float: left;
+}
+
+/* Locations container styling */
+.locations {
+    border-right: 1px solid #DDDDDD;
+}
+
+/* Heading styles for Locations and Amenities */
+.locations h3,
+.amenities h3 {
+    font-weight: 600;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    text-align: left;
+    margin-left: 30px;
+}
+
+/* Subheading styles for Locations and Amenities */
+.locations h4,
+.amenities h4 {
+    font-weight: 400;
+    font-size: 14px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-align: left;
+    margin-left: 30px;
+}

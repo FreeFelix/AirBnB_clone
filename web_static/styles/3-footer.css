@@ -1,0 +1,11 @@
+/* Styles for the footer */
+footer {
+    background-color: white; /* Background color of the footer */
+    height: 60px; /* Height of the footer */
+    width: 100%; /* Full width of the footer */
+    border-top: 1px solid #CCCCCC; /* 1 pixel solid border on top with a light gray color */
+    position: fixed; /* Fixed position at the bottom of the viewport */
+    bottom: 0; /* Positioned at the bottom */
+    text-align: center; /* Center-align the content within the footer */
+    line-height: 60px; /* Set the line height to vertically center content within the footer */
+}

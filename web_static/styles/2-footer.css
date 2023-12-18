@@ -1,0 +1,10 @@
+/* Styles for the footer */
+footer {
+    background-color: #00FF00; /* Set the background color to green */
+    height: 60px; /* Set the height of the footer */
+    width: 100%; /* Make the footer span the entire width of the viewport */
+    position: fixed; /* Fix the position of the footer at the bottom of the viewport */
+    bottom: 0; /* Align the bottom of the footer to the bottom of the viewport */
+    text-align: center; /* Center-align the text within the footer */
+    line-height: 60px; /* Set the line height to vertically center the text within the footer */
+}

@@ -1,0 +1,5 @@
+/* Resetting margin and padding for the 'body' element */
+body {
+    margin: 0;
+    padding: 0;
+}
